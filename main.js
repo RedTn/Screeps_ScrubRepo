@@ -1,6 +1,7 @@
 var roleHarvester = require('role.harvester');
 var roleUpgrader = require('role.upgrader');
 var roleBuilder = require('role.builder');
+var roleTransporter = require('role.transporter');
 var spawnController = require('spawn.controller');
 var cleanUp = require('cleanup');
 var helpers = require('helpers');
@@ -22,6 +23,9 @@ module.exports.loop = function () {
                 break;
             case 'builder':
                 roleBuilder.run(creep);
+                break;
+            case 'transporter':
+                roleTransporter.run(creep);
                 break;
             default:
         }
